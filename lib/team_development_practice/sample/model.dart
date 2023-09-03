@@ -3,7 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../todo.dart';
 
-// すべての Todo を dueDateTime の昇順で購読する。
+/// すべての [Todo] を dueDateTime の昇順で購読する。
 final todosFutureProvider = StreamProvider.autoDispose<List<Todo>>((ref) {
   final todoCollectionReference = FirebaseFirestore.instance.collection('todos').withConverter<Todo>(
         fromFirestore: (ds, _) => Todo.fromDocumentSnapshot(ds),
@@ -22,7 +22,7 @@ final sampleTodoServiceProvider = Provider.autoDispose<TodoService>(
   (ref) => const TodoService(),
 );
 
-// Todo を操作するメソッドを管理する。
+/// [Todo] を操作するメソッドを管理する。
 class TodoService {
   const TodoService();
 
