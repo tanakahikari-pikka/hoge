@@ -1,0 +1,11 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "minasehiro_ios_simurator",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "A17B8409-70B2-4378-AD7B-C496F428404C"
+        },
+    ]
+}
