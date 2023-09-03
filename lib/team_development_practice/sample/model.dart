@@ -5,6 +5,7 @@ import '../todo.dart';
 
 /// すべての [Todo] を dueDateTime の昇順で購読する。
 final todosFutureProvider = StreamProvider.autoDispose<List<Todo>>((ref) {
+  // 前半の処理は ripository などに分けるのがベターだが今回はそのままにしている
   final todoCollectionReference = FirebaseFirestore.instance.collection('todos').withConverter<Todo>(
         fromFirestore: (ds, _) => Todo.fromDocumentSnapshot(ds),
         toFirestore: (_, __) => throw UnimplementedError(),
