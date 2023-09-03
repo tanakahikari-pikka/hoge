@@ -1,7 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:nature_app/team_development_practice/sample/view.dart';
+import 'package:nature_app/team_development_practice/todo_riverpod/sample/view.dart';
+
+import 'team_development_practice/build_ui/minasehiro.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,23 +47,46 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const TodosPage();
-                    },
-                  ),
-                );
-              },
-              child: const Text("サンプルページ"),
-            )
+            NavigateButton(destination: IndexView(), label: "minasehiro UI Sample"),
+            NavigateButton(destination: TodosPage(), label: "Todo × Riverpod"),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class NavigateButton extends StatelessWidget {
+  const NavigateButton({
+    required this.destination,
+    required this.label,
+    super.key,
+  });
+
+  final Widget destination;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10.0),
+      child: ElevatedButton(
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) {
+                return destination;
+              },
+            ),
+          );
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Text(label),
         ),
       ),
     );

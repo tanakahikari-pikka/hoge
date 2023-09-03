@@ -1,4 +1,4 @@
-import "package:cloud_firestore/cloud_firestore.dart";
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../todo.dart';
@@ -34,10 +34,10 @@ class TodoService {
     required DateTime dueDateTime,
   }) =>
       FirebaseFirestore.instance.collection('todos').add({
-        "title": title,
-        "description": description,
-        "isDone": false,
-        "dueDateTime": dueDateTime,
+        'title': title,
+        'description': description,
+        'isDone': false,
+        'dueDateTime': dueDateTime,
       });
 
   /// 指定した [Todo] の `isDone` を更新する。
@@ -46,6 +46,6 @@ class TodoService {
     required bool status,
   }) =>
       FirebaseFirestore.instance.collection('todos').doc(firestoreId).update({
-        "isDone": status,
+        'isDone': status,
       });
 }
