@@ -17,8 +17,8 @@ List<String> todos = [
   "エアコン掃除業者予約",
 ];
 
-class IndexView extends StatelessWidget {
-  const IndexView({Key? key}) : super(key: key);
+class TodoIndexView extends StatelessWidget {
+  const TodoIndexView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

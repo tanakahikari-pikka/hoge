@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:nature_app/team_development_practice/todo_riverpod/sample/view.dart';
+import 'package:nature_app/team_development_practice/todo_riverpod/minasehiro/view.dart';
 
 import 'team_development_practice/build_ui/minasehiro.dart';
 
@@ -20,12 +20,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: "The Natures App",
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: "Home"),
     );
   }
 }
@@ -51,8 +51,8 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            NavigateButton(destination: IndexView(), label: "minasehiro UI Sample"),
-            NavigateButton(destination: TodosPage(), label: "Todo × Riverpod"),
+            NavigateButton(destination: TodoIndexView(), label: "minasehiro UI Sample"),
+            NavigateButton(destination: TodosPage(), label: "minasehiro Todo × Riverpod"),
           ],
         ),
       ),
