@@ -32,3 +32,6 @@ app.*.symbols
 
 # fvm symbolic link
 .fvm/flutter_sdk
+
+GoogleService-Info.plist //iOS用
+google-services.json //Android用
