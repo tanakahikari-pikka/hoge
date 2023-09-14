@@ -1,5 +1,3 @@
-// ウィジェットの雛形を作成
-
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
