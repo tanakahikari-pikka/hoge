@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:nature_app/team_development_practice/build_ui/hikari/screen/todo/todo_screen.dart';
 import 'package:nature_app/team_development_practice/todo_riverpod/minasehiro/view.dart';
 
 import 'team_development_practice/build_ui/minasehiro.dart';
@@ -51,8 +52,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            NavigateButton(destination: TodoIndexView(), label: "minasehiro UI Sample"),
-            NavigateButton(destination: TodosPage(), label: "minasehiro Todo × Riverpod"),
+            NavigateButton(
+                destination: TodoIndexView(), label: "minasehiro UI Sample"),
+            NavigateButton(destination: TodoScreen(), label: "hikari UI"),
+            NavigateButton(
+                destination: TodosPage(), label: "minasehiro Todo × Riverpod"),
           ],
         ),
       ),
